@@ -12,8 +12,6 @@ from train_utils import (train_one_epoch, evaluate, init_distributed_mode, save_
                          create_lr_scheduler, get_params_groups)
 from my_dataset import Dataset
 import transforms as T
-
-
 class SODPresetTrain:
     def __init__(self, base_size: Union[int, List[int]], crop_size: int,
                  hflip_prob=0.5, mean=(0.5,), std=(0.5,)):

@@ -8,8 +8,6 @@ from src import u2net_full
 from train_utils import evaluate
 from my_dataset import Dataset
 import transforms as T
-
-
 class SODPresetEval:
     def __init__(self, base_size: Union[int, List[int]], mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)):
         self.transforms = T.Compose([

@@ -4,8 +4,6 @@ import torch
 from src import u2net_full, u2net_lite
 layers = {"encode": [7, 6, 5, 4, 4, 4],
           "decode": [4, 4, 5, 6, 7]}
-
-
 def convert_conv_bn(new_weight, prefix, ks, v):
     if "conv" in ks[0]:
         if "weight" == ks[1]:

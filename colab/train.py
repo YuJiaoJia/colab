@@ -45,7 +45,7 @@ class SODPresetEval:
 
 
 def main(save_weights,mode,args):
-    writer = SummaryWriter("/content/drive/MyDrive/run/train"+mode)
+    writer = SummaryWriter("/content/gdrive/MyDrive/run/train"+mode)
     # 创建 EarlyStopping 实例
     early_stopping = EarlyStopping(patience=10, verbose=True)
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
@@ -54,7 +54,7 @@ def main(save_weights,mode,args):
     model = u2net_lite_half_m48()
     model.to(device)
     # 用来保存训练以及验证过程中信息
-    results_file = '/content/drive/MyDrive/res_txt/'+mode+'.txt'
+    results_file = '/content/gdrive/MyDrive/res_txt/'+mode+'.txt'
     #+"_results{}.txt".format(datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
 
     train_dataset = Dataset(args.data_path, train=True, transforms=SODPresetTrain([480, 235], crop_size=200))
@@ -160,7 +160,7 @@ def parse_args():
     #超参数
     parser = argparse.ArgumentParser(description="pytorch u2net training")
 
-    parser.add_argument("--data_path", default="/content/finger_u2net/", help="train")
+    parser.add_argument("--data_path", default="/content/colab/colab/", help="train")
     parser.add_argument("--device", default="cuda", help="training device")
     parser.add_argument("-b", "--batch-size", default=4, type=int)
     parser.add_argument('--wd', '--weight-decay', default=1e-4, type=float,
@@ -187,7 +187,7 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
     mode = 'u2net_half_43m_o64_im200'
-    save_weights = '/content/drive/MyDrive/save_weights/'
+    save_weights = '/content/gdrive/MyDrive/save_weights/'
 
     if not os.path.exists(save_weights + mode):
         os.mkdir(save_weights + mode)

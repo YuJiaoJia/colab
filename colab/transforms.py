@@ -12,8 +12,6 @@ class Compose(object):
             image, target = t(image, target)
 
         return image, target
-
-
 class ToTensor(object):
     def __call__(self, image, target):
         image = F.to_tensor(image)

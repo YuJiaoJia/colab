@@ -31,8 +31,7 @@ class Dataset(data.Dataset):
         for line in range(0, len(data)):
             l = data[line].rstrip()
             word = l.split()
-            word = '/content/finger_u2net/' + word
-            image_names.append(word[0])
+            image_names.append('/content/colab/colab/'+ word[0])
         f.close()
         f = open(self.mask_root + '/data.txt', 'r')
         mask_names = []
@@ -40,8 +39,7 @@ class Dataset(data.Dataset):
         for line in range(0, len(data)):
             l = data[line].rstrip()
             word = l.split()
-            word = '/content/finger_u2net/' + word
-            mask_names.append(word[0])
+            mask_names.append('/content/colab/colab/'+ word[0])
         f.close()
         self.masks_path = mask_names
         assert len(image_names) > 0, f"not find any images in {self.image_root}."
