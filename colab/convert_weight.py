@@ -1,5 +1,4 @@
 import re
-import os
 import torch
 from src import u2net_full, u2net_lite
 layers = {"encode": [7, 6, 5, 4, 4, 4],

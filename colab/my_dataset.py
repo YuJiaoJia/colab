@@ -3,7 +3,6 @@ import os
 import cv2
 import torch.utils.data as data
 
-
 class Dataset(data.Dataset):
     def __init__(self, root: str, train: bool = True, transforms=None):
         assert os.path.exists(root), f"path '{root}' does not exist."

@@ -1,4 +1,3 @@
-import multiprocessing
 import time
 import os
 os.chdir('/content/finger_u2net')

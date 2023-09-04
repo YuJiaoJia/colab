@@ -6,6 +6,7 @@ import torch.distributed as dist
 import torch.nn.functional as F
 import errno
 import os
+
 class SmoothedValue(object):
     """Track a series of values and provide access to smoothed values over a
     window or the global series average.

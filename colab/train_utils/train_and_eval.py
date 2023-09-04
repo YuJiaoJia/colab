@@ -4,7 +4,6 @@ from torch.nn import functional as F
 from . import distributed_utils as utils
 import torch.nn as nn
 
-
 import os
 from collections import deque
 def criterion(inputs, target):

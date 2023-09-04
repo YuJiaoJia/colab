@@ -2,7 +2,6 @@ import random
 from typing import List, Union
 from torchvision.transforms import functional as F
 from torchvision.transforms import transforms as T
-import os
 class Compose(object):
     def __init__(self, transforms):
         self.transforms = transforms

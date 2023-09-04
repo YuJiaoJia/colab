@@ -10,7 +10,6 @@ from u2net.src import u2net_lite,u2net_litte,u2net_lite_half_m32,u2net_lite_half
 from u2net.src.rep_half_u2net import rep_u2net_lite_half_m48
 from train_utils.train_and_eval import evaluate
 
-
 def time_synchronized():
     torch.cuda.synchronize() if torch.cuda.is_available() else None
     return time.time()
